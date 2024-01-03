@@ -34,8 +34,7 @@ app.use(
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const dev_db_url = "mongodb+srv://monishcode:Monishcode26luv@cluster0.azy5ptz.mongodb.net/local_library?retryWrites=true&w=majority";
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI;
 main().catch((err) => console.log(err));
 async function main() {
     await mongoose.connect(mongoDB);
